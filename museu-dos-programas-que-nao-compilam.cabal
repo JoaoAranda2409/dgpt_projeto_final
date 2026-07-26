@@ -1,0 +1,66 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.38.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           museu-dos-programas-que-nao-compilam
+version:        0.1.0.0
+description:    Um estudo executavel sobre como o sistema de tipos de Haskell pode tornar estados invalidos irrepresentaveis.
+homepage:       https://github.com/jvaranda/dgpt_projeto_final#readme
+bug-reports:    https://github.com/jvaranda/dgpt_projeto_final/issues
+author:         Joao Varanda
+maintainer:     Joao Varanda
+copyright:      2026 Joao Varanda
+license:        BSD-3-Clause
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/jvaranda/dgpt_projeto_final
+
+library
+  exposed-modules:
+      Expressions.Untyped
+      Expressions.Typed
+  other-modules:
+      Paths_museu_dos_programas_que_nao_compilam
+  autogen-modules:
+      Paths_museu_dos_programas_que_nao_compilam
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Wmissing-export-lists
+  build-depends:
+      base >=4.18 && <5
+  default-language: Haskell2010
+
+executable museu-dos-tipos
+  main-is: Main.hs
+  other-modules:
+      Paths_museu_dos_programas_que_nao_compilam
+  autogen-modules:
+      Paths_museu_dos_programas_que_nao_compilam
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Wmissing-export-lists -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.18 && <5
+    , museu-dos-programas-que-nao-compilam
+  default-language: Haskell2010
+
+test-suite museu-dos-tipos-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_museu_dos_programas_que_nao_compilam
+  autogen-modules:
+      Paths_museu_dos_programas_que_nao_compilam
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Wmissing-export-lists
+  build-depends:
+      base >=4.18 && <5
+    , museu-dos-programas-que-nao-compilam
+  default-language: Haskell2010
